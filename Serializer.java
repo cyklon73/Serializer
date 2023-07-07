@@ -18,10 +18,6 @@
  */
 public class Serializer {
 
-    public static void main(String[] args) {
-
-    }
-
     public static byte[] asArray(byte val) {
         return new byte[] {val};
     }
