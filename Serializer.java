@@ -42,7 +42,7 @@ public class Serializer {
         else if (obj instanceof Boolean) arr = serializeBool((Boolean) obj);
         else if (obj instanceof Character) arr = serializeChar((Character) obj);
         else if (obj instanceof String) arr = serializeString((String) obj);
-        else arr = asArray();
+        else throw new IllegalArgumentException("Only primitives and Strings allowed!");
         return arr;
     }
 
