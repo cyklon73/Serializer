@@ -1,17 +1,26 @@
 
+
 /**
 
- The Serializer class provides methods to serialize and deserialize
- various primitive data types in Java.
- <p>This class allows for easy conversion of primitive data types
- to byte arrays and vice versa, enabling efficient data storage,
- transmission, and interoperability.</p>
- @see <a href="https://github.com/cyklon73/Serializer">GitHub Repository</a>
- @version 1.0.0
- @since July 7, 2023
- @author Cyklon73
+ * The Serializer class provides methods to serialize and deserialize
+ * various primitive data types in Java.
+ * <p>This class allows for easy conversion of primitive data types
+ * to byte arrays and vice versa, enabling efficient data storage,
+ * transmission, and interoperability.</p>
+ * @see <a href="https://github.com/cyklon73/Serializer">GitHub Repository</a>
+ * @version 1.1.0
+ * @since July 7, 2023
+ * @author Cyklon73
+ *
+ * @license MIT License
+ * This software is released under the MIT License.
+ * See the LICENSE file for more information.
  */
 public class Serializer {
+
+    public static void main(String[] args) {
+
+    }
 
     public static byte[] asArray(byte val) {
         return new byte[] {val};
@@ -19,6 +28,25 @@ public class Serializer {
 
     public static byte[] asArray(byte... val) {
         return val;
+    }
+
+    /**
+     * serialize every primitive type
+     * @param obj the primitive type
+     * @return the byte array as result
+     */
+    public static byte[] serialize(Object obj) {
+        byte[] arr;
+        if (obj instanceof Byte) arr = serializeByte((Byte) obj);
+        else if (obj instanceof Short) arr = serializeShort((Short) obj);
+        else if (obj instanceof Integer) arr = serializeInt((Integer) obj);
+        else if (obj instanceof Long) arr = serializeLong((Long) obj);
+        else if (obj instanceof Float) arr = serializeFloat((Float) obj);
+        else if (obj instanceof Double) arr = serializeDouble((Double) obj);
+        else if (obj instanceof Boolean) arr = serializeBool((Boolean) obj);
+        else if (obj instanceof Character) arr = serializeChar((Character) obj);
+        else arr = asArray();
+        return arr;
     }
 
     public static byte[] serializeByte(byte val) {
