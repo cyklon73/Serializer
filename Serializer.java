@@ -41,6 +41,7 @@ public class Serializer {
         else if (obj instanceof Double) arr = serializeDouble((Double) obj);
         else if (obj instanceof Boolean) arr = serializeBool((Boolean) obj);
         else if (obj instanceof Character) arr = serializeChar((Character) obj);
+        else if (obj instanceof String) arr = serializeString((String) obj);
         else arr = asArray();
         return arr;
     }
