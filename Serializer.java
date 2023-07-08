@@ -1,5 +1,4 @@
 
-
 /**
 
  * The Serializer class provides methods to serialize and deserialize
@@ -8,7 +7,7 @@
  * to byte arrays and vice versa, enabling efficient data storage,
  * transmission, and interoperability.</p>
  * @see <a href="https://github.com/cyklon73/Serializer">GitHub Repository</a>
- * @version 1.1.0
+ * @version 1.1.1
  * @since July 7, 2023
  * @author Cyklon73
  *
@@ -17,10 +16,6 @@
  * See the LICENSE file for more information.
  */
 public class Serializer {
-
-    public static byte[] asArray(byte val) {
-        return new byte[] {val};
-    }
 
     public static byte[] asArray(byte... val) {
         return val;
